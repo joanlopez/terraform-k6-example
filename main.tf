@@ -73,3 +73,11 @@ resource "grafana_k6_project" "k6_tf_demo_k6_project" {
 
   name = "Terraform k6 example"
 }
+
+resource "grafana_k6_load_test" "k6_tf_demo_k6_load_test_from_file" {
+  provider = grafana.k6
+
+  project_id = grafana_k6_project.k6_tf_demo_k6_project.id
+  name       = "Terraform k6 example load test from file"
+  script = file("script.js")
+}
