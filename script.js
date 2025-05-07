@@ -7,7 +7,9 @@ export const options = {
 	},
 	scenarios: {
 		default: {
-			executor: 'shared-iterations',
+			executor: 'constant-vus',
+			vus: 10,
+			duration: '10s',
 			options: {
 				browser: {
 					type: 'chromium',
